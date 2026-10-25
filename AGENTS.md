@@ -24,6 +24,7 @@ Local setup is in `README.md`. This repository has no task runner and no scripts
 - The `AGENTS.md` closest to the file being changed wins over the root file.
 - The code is the source of truth. When a document and the code disagree, report the gap. Do not invent a reconciliation in the same task.
 - A rule lives in one file. Local rules live in the nearest `AGENTS.md`. The root file keeps shared rules only.
+- Every helper is a zsh function in `aliases.zsh`, in the same shape as `gtf`. Unalias the name first when Oh My Zsh already claims it.
 
 ## Maintenance
 
