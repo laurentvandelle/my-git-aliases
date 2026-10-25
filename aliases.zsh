@@ -3,19 +3,48 @@
 #   source /path/to/my-git-aliases/aliases.zsh
 
 # Oh My Zsh's git plugin already claims some of these names.
+unalias g 2>/dev/null
 unalias gac 2>/dev/null
 unalias gac! 2>/dev/null
-unalias grs 2>/dev/null
-unalias grh 2>/dev/null
 unalias gb 2>/dev/null
 unalias gbd 2>/dev/null
 unalias gcbr 2>/dev/null
+unalias glg 2>/dev/null
+unalias glgg 2>/dev/null
+unalias glo 2>/dev/null
 unalias gpr 2>/dev/null
+unalias grh 2>/dev/null
+unalias grs 2>/dev/null
+unalias gst 2>/dev/null
 unalias gw 2>/dev/null
 unalias gwa 2>/dev/null
 unalias gwb 2>/dev/null
 unalias gwd 2>/dev/null
 unalias gwl 2>/dev/null
+
+# Same shortcuts as the Oh My Zsh git plugin.
+g() {
+  git "$@"
+}
+gst() {
+  git status "$@"
+}
+glo() {
+  git log --oneline --decorate "$@"
+}
+glg() {
+  git log --stat "$@"
+}
+glgg() {
+  git log --graph "$@"
+}
+
+# Point a tag at origin/master and force-push it.
+gtf() {
+  git fetch origin
+  git tag -f $1 origin/master
+  git push origin $1 --force
+}
 
 # Stage everything and commit with the given message.
 gac() {

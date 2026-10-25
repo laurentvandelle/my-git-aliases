@@ -29,6 +29,12 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 
 | Command | What it does |
 | --- | --- |
+| `g` | Run `git` |
+| `gst` | Show `git status` |
+| `glo` | One-line decorated log (`git log --oneline --decorate`) |
+| `glg` | Log with diffstat (`git log --stat`) |
+| `glgg` | Graph log (`git log --graph`) |
+| `gtf <tag>` | Fetch `origin`, move `<tag>` to `origin/master`, and force-push it |
 | `gac "message"` | Stage everything and commit |
 | `gac!` | Stage everything and amend the last commit, keeping its message |
 | `grs [n]` | Soft-reset the last `n` commits (default 1) |
