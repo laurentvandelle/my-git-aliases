@@ -4,7 +4,7 @@ Git aliases for my day to day work.
 
 ## Getting started
 
-Requires [zsh](https://www.zsh.org/). `gpr` also needs the [GitHub CLI](https://cli.github.com/) (`gh`).
+Requires [zsh](https://www.zsh.org/).
 
 Clone the repo:
 
@@ -12,7 +12,7 @@ Clone the repo:
 git clone git@github.com:laurentvandelle/my-git-aliases.git ~/PERSO/my-git-aliases
 ```
 
-Source it from `~/.zshrc`, **after** Oh My Zsh. The file unaliases a few names the git plugin already claims (`gac`, `gb`, `grh`, and others), so loading it earlier lets the plugin win.
+Source it from `~/.zshrc`, **after** Oh My Zsh. The file unaliases names the git plugin already claims (`gac`, `gb`, `grh`, `gw`, and others), so loading it earlier lets the plugin win.
 
 ```zsh
 source $ZSH/oh-my-zsh.sh
@@ -36,7 +36,8 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 | `gb` | List local branches, most recently committed first |
 | `gbd <branch>` | Force-delete a local branch |
 | `gcbr <branch>` | Fetch and check out `origin/<branch>` as a new local branch |
-| `gpr` | Push the current branch and open a pull request |
-| `gw` / `gwa` / `gwb` / `gwd` / `gwl` | `git worktree` list, add, add `-b`, remove, list |
-
-`gpr` expects the current branch to match `[<type>/]<PREFIX>-<number>-<description>`, for example `PORTAIL-1-create-a-sidebar` or `feature/PORTAIL-14-reprendre-position-lecture`. Extra arguments are forwarded to `gh pr create`.
+| `gw` | Run `git worktree` |
+| `gwa` | Add a worktree (`git worktree add`) |
+| `gwb` | Add a worktree and create its branch (`git worktree add -b`) |
+| `gwd` | Remove a worktree (`git worktree remove`) |
+| `gwl` | List worktrees (`git worktree list`) |
