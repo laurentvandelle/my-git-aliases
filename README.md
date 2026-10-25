@@ -31,6 +31,7 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 | --- | --- |
 | `g` | Run `git` |
 | `gst` | Show `git status` |
+| `gb` | Run `git branch` |
 | `glo` | One-line decorated log (`git log --oneline --decorate`) |
 | `glg` | Log with diffstat (`git log --stat`) |
 | `glgg` | Graph log (`git log --graph`) |
@@ -39,7 +40,6 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 | `gac!` | Stage everything and amend the last commit, keeping its message |
 | `grs [n]` | Soft-reset the last `n` commits (default 1) |
 | `grh [n]` | Hard-reset the last `n` commits (default 1) |
-| `gb` | List local branches, most recently committed first |
 | `gbd <branch>` | Force-delete a local branch |
 | `gcbr <branch>` | Fetch and check out `origin/<branch>` as a new local branch |
 | `gw` | Run `git worktree` |

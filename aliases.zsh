@@ -29,6 +29,9 @@ g() {
 gst() {
   git status "$@"
 }
+gb() {
+  git branch "$@"
+}
 glo() {
   git log --oneline --decorate "$@"
 }
@@ -68,11 +71,6 @@ grs() {
 grh() {
   local count=${1:-1}
   git reset --hard HEAD~$count
-}
-
-# List local branches, most recently committed first.
-gb() {
-  git for-each-ref --sort=committerdate --format='%(committerdate:relative) %(refname:short)' refs/heads/
 }
 
 # Force-delete a local branch.
