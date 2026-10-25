@@ -11,6 +11,11 @@ unalias gb 2>/dev/null
 unalias gbd 2>/dev/null
 unalias gcbr 2>/dev/null
 unalias gpr 2>/dev/null
+unalias gw 2>/dev/null
+unalias gwa 2>/dev/null
+unalias gwb 2>/dev/null
+unalias gwd 2>/dev/null
+unalias gwl 2>/dev/null
 
 # Stage everything and commit with the given message.
 gac() {
@@ -52,37 +57,19 @@ gcbr() {
   git checkout remotes/origin/$1 -b $1
 }
 
-# Push the current branch and open a pull request.
-# Branch must match [<type>/]<PREFIX>-<number>-<description>,
-# e.g. PORTAIL-1-create-a-sidebar or feature/PORTAIL-14-reprendre-position-lecture.
-# Extra arguments are forwarded to `gh pr create`.
-gpr() {
-  local branch title prefix number desc ticket
-  branch=$(git branch --show-current) || return 1
-
-  # Optional type prefix (feature/, fix/, tech/, …): keep what follows the first slash.
-  ticket=${branch#*/}
-
-  if [[ ! $ticket =~ ^([A-Za-z]+)-([0-9]+)-(.+)$ ]]; then
-    echo "La branche '$branch' ne suit pas le format [<type>/]<prefix>-<card_number>-<description>"
-    echo "Exemples : PORTAIL-1-create-a-sidebar"
-    echo "           feature/PORTAIL-14-reprendre-position-lecture"
-    return 1
-  fi
-
-  prefix=$match[1]
-  number=$match[2]
-  desc=${match[3]//-/ }
-  title="[${prefix}-${number}] ${desc[1]:u}${desc[2,-1]}"
-
-  git push -u origin HEAD || return 1
-  gh pr create --title "$title" --body "" --assignee "@me" "$@" || return 1
-  gh pr view --web
-}
-
 # Git worktree
-alias gw='git worktree'
-alias gwa='git worktree add'
-alias gwb='git worktree add -b'
-alias gwd='git worktree remove'
-alias gwl='git worktree list'
+gw() {
+  git worktree
+}
+gwa() {
+  git worktree add
+}
+gwb() {
+  git worktree add -b
+}
+gwd() {
+  git worktree remove
+}
+gwl() {
+  git worktree list
+}
