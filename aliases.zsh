@@ -8,10 +8,13 @@ unalias gac 2>/dev/null
 unalias gac! 2>/dev/null
 unalias gb 2>/dev/null
 unalias gbd 2>/dev/null
+unalias gcb 2>/dev/null
 unalias gcbr 2>/dev/null
+unalias gco 2>/dev/null
 unalias glg 2>/dev/null
 unalias glgg 2>/dev/null
 unalias glo 2>/dev/null
+unalias gp 2>/dev/null
 unalias gpr 2>/dev/null
 unalias grh 2>/dev/null
 unalias grs 2>/dev/null
@@ -37,6 +40,15 @@ glg() {
 }
 glgg() {
   git log --graph "$@"
+}
+gp() {
+  git push "$@"
+}
+gco() {
+  git checkout "$@"
+}
+gcb() {
+  git checkout -b "$@"
 }
 
 # Point a tag at origin/master and force-push it.
