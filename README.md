@@ -35,6 +35,8 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 | `glg` | Log with diffstat (`git log --stat`) |
 | `glgg` | Graph log (`git log --graph`) |
 | `gp` | Push (`git push`) |
+| `gm` | Merge (`git merge`) |
+| `gmm` | Fetch `origin`, then merge `origin/main`, or `origin/master` when `main` is absent |
 | `gco` | Check out a branch or path (`git checkout`) |
 | `gcb` | Create a branch and check it out (`git checkout -b`) |
 | `gc` | Commit, showing the diff (`git commit --verbose`) |

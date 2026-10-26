@@ -16,6 +16,7 @@ unalias gco 2>/dev/null
 unalias glg 2>/dev/null
 unalias glgg 2>/dev/null
 unalias glo 2>/dev/null
+unalias gm 2>/dev/null
 unalias gp 2>/dev/null
 unalias gpr 2>/dev/null
 unalias grh 2>/dev/null
@@ -40,6 +41,19 @@ glgg() {
 }
 gp() {
   git push "$@"
+}
+gm() {
+  git merge "$@"
+}
+
+# Fetch origin and merge origin/main, or origin/master when main is absent.
+gmm() {
+  git fetch origin || return
+  if git show-ref --verify --quiet refs/remotes/origin/main; then
+    git merge origin/main "$@"
+  else
+    git merge origin/master "$@"
+  fi
 }
 gco() {
   git checkout "$@"
