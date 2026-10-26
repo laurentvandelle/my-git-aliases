@@ -8,6 +8,8 @@ unalias gac 2>/dev/null
 unalias gac! 2>/dev/null
 unalias gb 2>/dev/null
 unalias gbd 2>/dev/null
+unalias gc 2>/dev/null
+unalias gc! 2>/dev/null
 unalias gcb 2>/dev/null
 unalias gcbr 2>/dev/null
 unalias gco 2>/dev/null
@@ -49,6 +51,12 @@ gco() {
 }
 gcb() {
   git checkout -b "$@"
+}
+gc() {
+  git commit --verbose "$@"
+}
+gc!() {
+  git commit --verbose --amend "$@"
 }
 
 # Create a tag on HEAD and push it.

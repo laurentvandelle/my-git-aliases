@@ -37,6 +37,8 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 | `gp` | Push (`git push`) |
 | `gco` | Check out a branch or path (`git checkout`) |
 | `gcb` | Create a branch and check it out (`git checkout -b`) |
+| `gc` | Commit, showing the diff (`git commit --verbose`) |
+| `gc!` | Amend the last commit, showing the diff (`git commit --verbose --amend`) |
 | `gt <tag>` | Create `<tag>` on `HEAD` and push it |
 | `gtf <tag>` | Fetch `origin`, move `<tag>` to `origin/master`, and force-push it |
 | `gac "message"` | Stage everything and commit |
