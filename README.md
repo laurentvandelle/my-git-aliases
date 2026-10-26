@@ -12,7 +12,7 @@ Clone the repo:
 git clone git@github.com:laurentvandelle/my-git-aliases.git ~/PERSO/my-git-aliases
 ```
 
-Source it from `~/.zshrc`, **after** Oh My Zsh. The file unaliases names the git plugin already claims (`gac`, `gb`, `grh`, `gw`, and others), so loading it earlier lets the plugin win.
+Source it from `~/.zshrc`, **after** Oh My Zsh. The file unaliases names the git plugin already claims (`gac`, `gb`, `grh`, `gst`, and others), so loading it earlier lets the plugin win.
 
 ```zsh
 source $ZSH/oh-my-zsh.sh
@@ -50,6 +50,6 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 | `gcbr <branch>` | Fetch and check out `origin/<branch>` as a new local branch |
 | `gw` | Run `git worktree` |
 | `gwa` | Add a worktree (`git worktree add`) |
-| `gwb` | Add a worktree and create its branch (`git worktree add -b`) |
-| `gwd` | Remove a worktree (`git worktree remove`) |
 | `gwl` | List worktrees (`git worktree list`) |
+| `gwmv` | Move a worktree (`git worktree move`) |
+| `gwd` | Remove a worktree (`git worktree remove`) |

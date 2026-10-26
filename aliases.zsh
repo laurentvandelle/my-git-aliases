@@ -21,11 +21,6 @@ unalias gpr 2>/dev/null
 unalias grh 2>/dev/null
 unalias grs 2>/dev/null
 unalias gst 2>/dev/null
-unalias gw 2>/dev/null
-unalias gwa 2>/dev/null
-unalias gwb 2>/dev/null
-unalias gwd 2>/dev/null
-unalias gwl 2>/dev/null
 
 # Same shortcuts as the Oh My Zsh git plugin.
 g() {
@@ -115,19 +110,19 @@ gcbr() {
   git checkout remotes/origin/$1 -b $1
 }
 
-# Git worktree
+# Git worktree. Same subcommands as Oh My Zsh, under the gw prefix.
 gw() {
-  git worktree
+  git worktree "$@"
 }
 gwa() {
-  git worktree add
-}
-gwb() {
-  git worktree add -b
-}
-gwd() {
-  git worktree remove
+  git worktree add "$@"
 }
 gwl() {
-  git worktree list
+  git worktree list "$@"
+}
+gwmv() {
+  git worktree move "$@"
+}
+gwd() {
+  git worktree remove "$@"
 }
