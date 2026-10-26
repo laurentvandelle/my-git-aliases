@@ -51,6 +51,12 @@ gcb() {
   git checkout -b "$@"
 }
 
+# Create a tag on HEAD and push it.
+gt() {
+  git tag $1
+  git push origin $1
+}
+
 # Point a tag at origin/master and force-push it.
 gtf() {
   git fetch origin
