@@ -118,10 +118,10 @@ gbd() {
   git branch -D $1
 }
 
-# Check out a remote branch as a new local branch of the same name.
+# Check out origin/<branch>, resetting the local branch when it already exists.
 gcbr() {
   git fetch --all --prune
-  git checkout remotes/origin/$1 -b $1
+  git checkout -B $1 origin/$1
 }
 
 # Git worktree. Same subcommands as Oh My Zsh, under the gw prefix.

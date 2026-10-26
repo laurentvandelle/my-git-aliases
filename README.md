@@ -49,7 +49,7 @@ If those helpers were previously defined inline in `~/.zshrc`, delete that block
 | `grh [n]` | Hard-reset the last `n` commits (default 1) |
 | `gb` | List local branches, most recently committed first (current branch in green, others in cyan) |
 | `gbd <branch>` | Force-delete a local branch |
-| `gcbr <branch>` | Fetch and check out `origin/<branch>` as a new local branch |
+| `gcbr <branch>` | Fetch and check out `origin/<branch>`, resetting the local branch when it already exists |
 | `gw` | Run `git worktree` |
 | `gwa` | Add a worktree (`git worktree add`) |
 | `gwl` | List worktrees (`git worktree list`) |
